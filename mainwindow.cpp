@@ -1,4 +1,4 @@
-#include <QAction>
+﻿#include <QAction>
 #include <QLabel>
 #include <QMenu>
 #include <QMenuBar>
@@ -128,8 +128,8 @@ void MainWindow::selectAll()
 
 void MainWindow::about()
 {
-    QMessageBox::about(this, tr("关于 MainWindow"),
-            tr("<h2>MainWindow 1.0</h2>"
+    QMessageBox::about(this, QStringLiteral("关于 MainWindow"),
+            QStringLiteral("<h2>MainWindow 1.0</h2>"
                "<p>Copyright &copy; 2018 SouthEast University."
                "<p>MainWindow是一个用来展示QAction, QMainWindow, QMenuBar, "
                "QStatusBar, QTableWidget, QToolBar以及其他Qt类用法"
@@ -138,88 +138,88 @@ void MainWindow::about()
 
 void MainWindow::createActions()
 {
-    newAction = new QAction(tr("新建(&N)"), this);
+    newAction = new QAction(QStringLiteral("新建(&N)"), this);
     newAction->setIcon(QIcon(":/images/new.png"));
     newAction->setShortcut(QKeySequence::New);
-    newAction->setStatusTip(tr("新建一个文件"));
+    newAction->setStatusTip(QStringLiteral("新建一个文件"));
     connect(newAction, &QAction::triggered,
             this, &MainWindow::newFile);
 
-    openAction = new QAction(tr("打开(&O)"), this);
+    openAction = new QAction(QStringLiteral("打开(&O)"), this);
     openAction->setIcon(QIcon(":/images/open.png"));
     openAction->setShortcut(QKeySequence::Open);
-    openAction->setStatusTip(tr("打开一个文件"));
+    openAction->setStatusTip(QStringLiteral("打开一个文件"));
     connect(openAction, &QAction::triggered,
             this, &MainWindow::open);
 
-    saveAction = new QAction(tr("保存(&S)"), this);
+    saveAction = new QAction(QStringLiteral("保存(&S)"), this);
     saveAction->setIcon(QIcon(":/images/save.png"));
     saveAction->setShortcut(QKeySequence::Save);
     saveAction->setStatusTip("保存文件");
     connect(saveAction, &QAction::triggered,
             this, &MainWindow::save);
 
-    saveAsAction = new QAction(tr("另存为(&A)..."), this);
-    saveAsAction->setStatusTip(tr("将文件另存为..."));
+    saveAsAction = new QAction(QStringLiteral("另存为(&A)..."), this);
+    saveAsAction->setStatusTip(QStringLiteral("将文件另存为..."));
     connect(saveAsAction, &QAction::triggered,
             this, &MainWindow::saveAs);
 
-    exitAction = new QAction(tr("关闭"), this);
-    exitAction->setShortcut(tr("Ctrl+Q"));
-    exitAction->setStatusTip(tr("退出程序"));
+    exitAction = new QAction(QStringLiteral("关闭"), this);
+    exitAction->setShortcut(QStringLiteral("Ctrl+Q"));
+    exitAction->setStatusTip(QStringLiteral("退出程序"));
     connect(exitAction, &QAction::triggered,
             this, &MainWindow::close);
 
-    cutAction = new QAction(tr("剪切(&T)"), this);
+    cutAction = new QAction(QStringLiteral("剪切(&T)"), this);
     cutAction->setIcon(QIcon(":/images/cut.png"));
     cutAction->setShortcut(QKeySequence::Cut);
-    cutAction->setStatusTip(tr("剪切文本"));
+    cutAction->setStatusTip(QStringLiteral("剪切文本"));
     connect(cutAction, &QAction::triggered,
             this, &MainWindow::cut);
 
-    copyAction = new QAction(tr("复制(&C)"), this);
+    copyAction = new QAction(QStringLiteral("复制(&C)"), this);
     copyAction->setIcon(QIcon(":/images/copy.png"));
     copyAction->setShortcut(QKeySequence::Copy);
-    copyAction->setStatusTip(tr("复制文本"));
+    copyAction->setStatusTip(QStringLiteral("复制文本"));
     connect(copyAction, &QAction::triggered,
             this, &MainWindow::copy);
 
-    pasteAction = new QAction(tr("粘贴(&P)"), this);
+    pasteAction = new QAction(QStringLiteral("粘贴(&P)"), this);
     pasteAction->setIcon(QIcon(":/images/paste.png"));
     pasteAction->setShortcut(QKeySequence::Paste);
-    pasteAction->setStatusTip(tr("粘贴文本"));
+    pasteAction->setStatusTip(QStringLiteral("粘贴文本"));
     connect(pasteAction, &QAction::triggered,
             this, &MainWindow::paste);
 
-    deleteAction = new QAction(tr("删除(&D)"), this);
+    deleteAction = new QAction(QStringLiteral("删除(&D)"), this);
     deleteAction->setShortcut(QKeySequence::Delete);
-    deleteAction->setStatusTip(tr("删除所选文本"));
+    deleteAction->setStatusTip(QStringLiteral("删除所选文本"));
     connect(deleteAction, &QAction::triggered,
             this, &MainWindow::deleteText);
 
-    selectAllAction = new QAction(tr("全选(&L)"), this);
-    selectAllAction->setStatusTip(tr("全选文本"));
+    selectAllAction = new QAction(QStringLiteral("全选(&L)"), this);
+    selectAllAction->setStatusTip(QStringLiteral("全选文本"));
     connect(selectAllAction, &QAction::triggered,
             this, &MainWindow::selectAll);
 
-    findAction = new QAction(tr("查找(&F)..."), this);
-    findAction->setStatusTip(tr("查找文本"));
+    findAction = new QAction(QStringLiteral("查找(&F)..."), this);
+    findAction->setStatusTip(QStringLiteral("查找文本"));
 
-    fullScreenAction = new QAction(tr("切换全屏模式"), this);
+    fullScreenAction = new QAction(QStringLiteral("切换全屏模式"), this);
     fullScreenAction->setShortcut(QKeySequence::FullScreen);
-    fullScreenAction->setStatusTip(tr("全屏显示"));
+    fullScreenAction->setStatusTip(QStringLiteral("全屏显示"));
 
-    optionAction = new QAction(tr("首选项..."), this);
-    optionAction->setStatusTip(tr("配置程序"));
+    optionAction = new QAction(QStringLiteral("首选项..."), this);
+    optionAction->setStatusTip(QStringLiteral("配置程序"));
 
-    md5Action = new QAction(tr("MD5"), this);
-    md5Action->setStatusTip(tr("MD5校验"));
+    md5Action = new QAction(QStringLiteral("MD5"), this);
+    md5Action->setStatusTip(QStringLiteral("MD5校验"));
 
-    updateAction = new QAction(tr("升级 MainWindow"), this);
-    updateAction->setStatusTip(tr("升级应用程序"));
+    updateAction = new QAction(QStringLiteral("升级 MainWindow"), this);
+    updateAction->setStatusTip(QStringLiteral("升级应用程序"));
 
-    aboutAction = new QAction(tr("关于 MainWindow..."), this);
-    aboutAction->setStatusTip(tr("显示应用的相关信息"));
+    aboutAction = new QAction(QStringLiteral("关于 MainWindow..."), this);
+    aboutAction->setStatusTip(QStringLiteral("显示应用的相关信息"));
     connect(aboutAction, &QAction::triggered,
             this, &MainWindow::about);
 }
@@ -227,7 +227,7 @@ void MainWindow::createActions()
 void MainWindow::createMenus()
 {
     // 文件菜单
-    fileMenu = menuBar()->addMenu(tr("文件(&F)"));
+    fileMenu = menuBar()->addMenu(QStringLiteral("文件(&F)"));
     fileMenu->addAction(newAction);
     fileMenu->addAction(openAction);
     fileMenu->addAction(saveAction);
@@ -238,7 +238,7 @@ void MainWindow::createMenus()
     fileMenu->addAction(exitAction);
 
     // 编辑菜单
-    editMenu = menuBar()->addMenu(tr("编辑(&E)"));
+    editMenu = menuBar()->addMenu(QStringLiteral("编辑(&E)"));
     editMenu->addAction(cutAction);
     editMenu->addAction(copyAction);
     editMenu->addAction(pasteAction);
@@ -246,23 +246,23 @@ void MainWindow::createMenus()
     editMenu->addAction(selectAllAction);
 
     // 搜索菜单
-    searchMenu = menuBar()->addMenu(tr("搜索(&S)"));
+    searchMenu = menuBar()->addMenu(QStringLiteral("搜索(&S)"));
     searchMenu->addAction(findAction);
 
     // 视图菜单
-    viewMenu = menuBar()->addMenu(tr("视图(&V)"));
+    viewMenu = menuBar()->addMenu(QStringLiteral("视图(&V)"));
     viewMenu->addAction(fullScreenAction);
 
     // 设置菜单
-    settingsMenu = menuBar()->addMenu(tr("设置(&T)"));
+    settingsMenu = menuBar()->addMenu(QStringLiteral("设置(&T)"));
     settingsMenu->addAction(optionAction);
 
     // 工具菜单
-    toolsMenu = menuBar()->addMenu(tr("工具(&O)"));
+    toolsMenu = menuBar()->addMenu(QStringLiteral("工具(&O)"));
     toolsMenu->addAction(md5Action);
 
     // 帮助菜单
-    helpMenu = menuBar()->addMenu(tr("帮助(&H)"));
+    helpMenu = menuBar()->addMenu(QStringLiteral("帮助(&H)"));
     helpMenu->addAction(updateAction);
     helpMenu->addAction(aboutAction);
 }
@@ -277,12 +277,12 @@ void MainWindow::createContextMenu()
 
 void MainWindow::createToolBars()
 {
-    fileToolBar = addToolBar(tr("&File"));
+    fileToolBar = addToolBar(QStringLiteral("&File"));
     fileToolBar->addAction(newAction);
     fileToolBar->addAction(openAction);
     fileToolBar->addAction(saveAction);
 
-    editToolBar = addToolBar(tr("&Edit"));
+    editToolBar = addToolBar(QStringLiteral("&Edit"));
     editToolBar->addAction(cutAction);
     editToolBar->addAction(copyAction);
     editToolBar->addAction(pasteAction);
@@ -293,7 +293,7 @@ void MainWindow::createToolBars()
 
 void MainWindow::createStatusBar()
 {
-    showLabel = new QLabel(tr("Normal text file"));
+    showLabel = new QLabel(QStringLiteral("Normal text file"));
     showLabel->setAlignment(Qt::AlignLeft);
     showLabel->setMinimumSize(showLabel->sizeHint());
 
@@ -305,7 +305,7 @@ void MainWindow::setCurrentFile(const QString &fileName)
     curFile = fileName;
     setWindowModified(false);
 
-    QString shownName = tr("new");
+    QString shownName = QStringLiteral("new");
 
     if(!curFile.isEmpty())
     {
@@ -313,17 +313,17 @@ void MainWindow::setCurrentFile(const QString &fileName)
         shownName = curFile;
     }
 
-    setWindowTitle(tr("%1[*] - %2")
+    setWindowTitle(QStringLiteral("%1[*] - %2")
                    .arg(shownName)
-                   .arg(tr("TextEditor")));
+                   .arg(QStringLiteral("TextEditor")));
 }
 
 bool MainWindow::okToContinue()
 {
     if(isWindowModified())
     {
-        int res = QMessageBox::warning(this, tr("MainWindow"),
-                                       tr("The text has been modified.\n"
+        int res = QMessageBox::warning(this, QStringLiteral("MainWindow"),
+                                       QStringLiteral("The text has been modified.\n"
                                           "Do you want to save your changes?"),
                                        QMessageBox::Yes | QMessageBox::No
                                        | QMessageBox::Cancel);
@@ -343,12 +343,12 @@ bool MainWindow::loadFile(const QString &fileName)
 {
     if(!textEdit->readFile(fileName))
     {
-        statusBar()->showMessage(tr("Loading canceled"), 2000);
+        statusBar()->showMessage(QStringLiteral("Loading canceled"), 2000);
         return false;
     }
 
     setCurrentFile(fileName);
-    statusBar()->showMessage(tr("File loaded"), 2000);
+    statusBar()->showMessage(QStringLiteral("File loaded"), 2000);
     return true;
 }
 
@@ -356,12 +356,12 @@ bool MainWindow::saveFile(const QString &fileName)
 {
     if(!textEdit->writeFile(fileName))
     {
-        statusBar()->showMessage(tr("Saving canceled"), 2000);
+        statusBar()->showMessage(QStringLiteral("Saving canceled"), 2000);
         return false;
     }
 
     setCurrentFile(fileName);
-    statusBar()->showMessage(tr("File saved"), 2000);
+    statusBar()->showMessage(QStringLiteral("File saved"), 2000);
     return true;
 }
 

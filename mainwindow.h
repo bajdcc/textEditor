@@ -1,4 +1,4 @@
-#ifndef MainWindow_H
+﻿#ifndef MainWindow_H
 #define MainWindow_H
 
 #include <QMainWindow>
